@@ -30,7 +30,7 @@ app.post("/",function(req,res){
     auth:"rathore1:69fdafc70918f1623e164d83c6cfddba-us10",
   } ;
 
-  const request = https.request(url,option,function(response){
+  const request = https.request(url, option ,function(response){
     if(response.statusCode===200){
       res.sendFile(__dirname + "/success.html");
     }else{
@@ -46,7 +46,7 @@ app.post("/",function(req,res){
 app.post("/failure",function(req,res){
   res.redirect("/");
 });
-app.listen(3400, function() {
+app.listen(process.env.PORT || 3400, function() {
   console.log('Server is running at 3400 port');
 });
 
